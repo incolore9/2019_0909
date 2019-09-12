@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+
+			<title>택시 요금 계산기</title>
+				
+				<style>
+					input[type="number"]{ background: #cccccc;
+						border: none;
+						padding: 10px;
+						color: black;
+						font-size :15px;
+						width: 70%;}
+
+					input[type="button"]{ background: #ffcd42;
+					border: none;
+					padding: 9px;
+					padding-top: 11px;
+					color: black;
+					font-size :16px; 
+					font-weight: 500;}
+
+					h1{ font-size: 80px;
+						font-weight: 300;}
+
+					h2{ font-size: 45px;
+						font-weight: 300;}
+
+ 					h3{ font-size: 40px }
+
+ 					p{  font-size: 20px;
+ 						font-weight: 300; }
+
+					header{}
+					
+					body{margin: 60px;}
+
+					div{padding-top: 200px;}
+				</style>
+
+</head>
+	<body>
+	
+		<header>
+			<h1>간단한 택시 요금 계산기</h1>
+			<p>
+			해당 홈페이지의 측정값은 '15km/h 이하 주행시 35초당 100원이 추가'되는 조건이 추가되지 않아 실제 택시를 이용했을 때 지불하는 비용보다 꽤 낮게 측정됩니다..!
+			</p>
+		</header>
+
+		<h2>
+				<input type="number" id="dist" placeholder="미터 단위의 거리를 입력해주세요.">
+		
+				<input type="button" value="입력" id="but">
+			
+		<div id="monitor2">이곳에 결과값이 출력됩니다.</div>
+			
+				<script type="text/javascript">
+					but.onclick = function(){
+						var myh = dist.value;
+
+						var km = myh/1000
+							
+						var kmview = km.toFixed(1);
+							
+
+				if ( myh < 2000 ) { var myh = 2000} 
+						var ex = (myh - 2000)/132;
+					
+						var exx = (ex*100) + 3800
+						var u = 100
+						var over = Math.round(exx/u)*u;	
+
+						monitor2.innerHTML = "약 " + kmview + "km를 달리셨고, " + over + "원이 나올 예정입니다..";
+						
+					}
+				</script>
+		</h2>
+	</body>
+</html>
